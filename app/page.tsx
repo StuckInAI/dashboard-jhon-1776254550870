@@ -7,7 +7,7 @@ import TopProducts from '@/components/TopProducts';
 
 export default function DashboardPage() {
   return (
-    <div className="flex h-screen bg-slate-50 overflow-hidden">
+    <div className="flex h-screen bg-purple-50 overflow-hidden">
       <Sidebar />
       <div className="flex flex-col flex-1 overflow-hidden">
         <Header />

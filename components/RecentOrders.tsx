@@ -34,8 +34,8 @@ const statusConfig: Record<OrderStatus, { label: string; icon: React.ReactNode; 
   Shipped: {
     label: 'Shipped',
     icon: <Truck size={14} />,
-    color: 'text-blue-700',
-    bg: 'bg-blue-100',
+    color: 'text-purple-700',
+    bg: 'bg-purple-100',
   },
 };
 
@@ -50,46 +50,46 @@ const orders: Order[] = [
 ];
 
 const avatarColors = [
-  'from-blue-400 to-blue-600',
-  'from-violet-400 to-violet-600',
-  'from-emerald-400 to-emerald-600',
-  'from-amber-400 to-amber-600',
-  'from-rose-400 to-rose-600',
-  'from-cyan-400 to-cyan-600',
+  'from-purple-400 to-purple-600',
+  'from-fuchsia-400 to-fuchsia-600',
   'from-pink-400 to-pink-600',
+  'from-violet-400 to-violet-600',
+  'from-rose-400 to-rose-600',
+  'from-indigo-400 to-indigo-600',
+  'from-purple-300 to-fuchsia-600',
 ];
 
 export default function RecentOrders() {
   return (
-    <div className="bg-white rounded-2xl shadow-sm border border-slate-100">
-      <div className="px-6 py-5 flex items-center justify-between border-b border-slate-100">
+    <div className="bg-white rounded-2xl shadow-sm border border-purple-100">
+      <div className="px-6 py-5 flex items-center justify-between border-b border-purple-100">
         <div>
-          <h2 className="text-lg font-bold text-slate-800">Recent Orders</h2>
-          <p className="text-sm text-slate-500">Latest 7 transactions</p>
+          <h2 className="text-lg font-bold text-violet-900">Recent Orders</h2>
+          <p className="text-sm text-violet-400">Latest 7 transactions</p>
         </div>
-        <button className="text-sm font-medium text-blue-600 hover:text-blue-700 transition-colors">
+        <button className="text-sm font-medium text-purple-600 hover:text-purple-700 transition-colors">
           View all →
         </button>
       </div>
       <div className="overflow-x-auto">
         <table className="w-full">
           <thead>
-            <tr className="bg-slate-50">
-              <th className="px-6 py-3 text-left text-xs font-semibold text-slate-500 uppercase tracking-wider">Order</th>
-              <th className="px-6 py-3 text-left text-xs font-semibold text-slate-500 uppercase tracking-wider">Customer</th>
-              <th className="px-6 py-3 text-left text-xs font-semibold text-slate-500 uppercase tracking-wider hidden md:table-cell">Product</th>
-              <th className="px-6 py-3 text-left text-xs font-semibold text-slate-500 uppercase tracking-wider hidden lg:table-cell">Date</th>
-              <th className="px-6 py-3 text-left text-xs font-semibold text-slate-500 uppercase tracking-wider">Amount</th>
-              <th className="px-6 py-3 text-left text-xs font-semibold text-slate-500 uppercase tracking-wider">Status</th>
+            <tr className="bg-purple-50">
+              <th className="px-6 py-3 text-left text-xs font-semibold text-violet-400 uppercase tracking-wider">Order</th>
+              <th className="px-6 py-3 text-left text-xs font-semibold text-violet-400 uppercase tracking-wider">Customer</th>
+              <th className="px-6 py-3 text-left text-xs font-semibold text-violet-400 uppercase tracking-wider hidden md:table-cell">Product</th>
+              <th className="px-6 py-3 text-left text-xs font-semibold text-violet-400 uppercase tracking-wider hidden lg:table-cell">Date</th>
+              <th className="px-6 py-3 text-left text-xs font-semibold text-violet-400 uppercase tracking-wider">Amount</th>
+              <th className="px-6 py-3 text-left text-xs font-semibold text-violet-400 uppercase tracking-wider">Status</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-slate-100">
+          <tbody className="divide-y divide-purple-50">
             {orders.map((order, idx) => {
               const s = statusConfig[order.status];
               return (
-                <tr key={order.id} className="hover:bg-slate-50 transition-colors">
+                <tr key={order.id} className="hover:bg-purple-50 transition-colors">
                   <td className="px-6 py-4">
-                    <span className="text-sm font-medium text-slate-700">{order.id}</span>
+                    <span className="text-sm font-medium text-violet-700">{order.id}</span>
                   </td>
                   <td className="px-6 py-4">
                     <div className="flex items-center gap-3">
@@ -98,17 +98,17 @@ export default function RecentOrders() {
                       >
                         {order.avatar}
                       </div>
-                      <span className="text-sm font-medium text-slate-700">{order.customer}</span>
+                      <span className="text-sm font-medium text-violet-700">{order.customer}</span>
                     </div>
                   </td>
                   <td className="px-6 py-4 hidden md:table-cell">
-                    <span className="text-sm text-slate-500">{order.product}</span>
+                    <span className="text-sm text-violet-400">{order.product}</span>
                   </td>
                   <td className="px-6 py-4 hidden lg:table-cell">
-                    <span className="text-sm text-slate-500">{order.date}</span>
+                    <span className="text-sm text-violet-400">{order.date}</span>
                   </td>
                   <td className="px-6 py-4">
-                    <span className="text-sm font-semibold text-slate-800">{order.amount}</span>
+                    <span className="text-sm font-semibold text-violet-900">{order.amount}</span>
                   </td>
                   <td className="px-6 py-4">
                     <span

@@ -15,32 +15,32 @@ const stats: Stat[] = [
     value: '$84,254',
     change: 12.5,
     icon: <DollarSign size={22} />,
-    iconBg: 'bg-blue-100',
-    iconColor: 'text-blue-600',
+    iconBg: 'bg-purple-100',
+    iconColor: 'text-purple-600',
   },
   {
     label: 'Total Orders',
     value: '3,842',
     change: 8.2,
     icon: <ShoppingBag size={22} />,
-    iconBg: 'bg-violet-100',
-    iconColor: 'text-violet-600',
+    iconBg: 'bg-fuchsia-100',
+    iconColor: 'text-fuchsia-600',
   },
   {
     label: 'New Customers',
     value: '1,294',
     change: -3.1,
     icon: <Users size={22} />,
-    iconBg: 'bg-emerald-100',
-    iconColor: 'text-emerald-600',
+    iconBg: 'bg-pink-100',
+    iconColor: 'text-pink-600',
   },
   {
     label: 'Active Sessions',
     value: '521',
     change: 5.7,
     icon: <Activity size={22} />,
-    iconBg: 'bg-amber-100',
-    iconColor: 'text-amber-600',
+    iconBg: 'bg-violet-100',
+    iconColor: 'text-violet-600',
   },
 ];
 
@@ -50,12 +50,12 @@ export default function StatsCards() {
       {stats.map((stat) => (
         <div
           key={stat.label}
-          className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 hover:shadow-md transition-shadow"
+          className="bg-white rounded-2xl p-6 shadow-sm border border-purple-100 hover:shadow-md transition-shadow"
         >
           <div className="flex items-start justify-between">
             <div>
-              <p className="text-sm font-medium text-slate-500">{stat.label}</p>
-              <p className="text-2xl font-bold text-slate-800 mt-1">{stat.value}</p>
+              <p className="text-sm font-medium text-violet-400">{stat.label}</p>
+              <p className="text-2xl font-bold text-violet-900 mt-1">{stat.value}</p>
             </div>
             <div className={`${stat.iconBg} ${stat.iconColor} p-3 rounded-xl`}>
               {stat.icon}
@@ -74,7 +74,7 @@ export default function StatsCards() {
             >
               {stat.change >= 0 ? '+' : ''}{stat.change}%
             </span>
-            <span className="text-sm text-slate-400 ml-1">vs last month</span>
+            <span className="text-sm text-violet-300 ml-1">vs last month</span>
           </div>
         </div>
       ))}

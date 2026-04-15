@@ -33,53 +33,53 @@ const formatCurrency = (value: number) => {
 
 export default function RevenueChart() {
   return (
-    <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+    <div className="bg-white rounded-2xl p-6 shadow-sm border border-purple-100">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h2 className="text-lg font-bold text-slate-800">Revenue Overview</h2>
-          <p className="text-sm text-slate-500">Monthly revenue vs expenses</p>
+          <h2 className="text-lg font-bold text-violet-900">Revenue Overview</h2>
+          <p className="text-sm text-violet-400">Monthly revenue vs expenses</p>
         </div>
         <div className="flex gap-2">
-          <button className="px-3 py-1 text-xs font-medium bg-blue-600 text-white rounded-lg">Year</button>
-          <button className="px-3 py-1 text-xs font-medium text-slate-500 hover:bg-slate-100 rounded-lg">Quarter</button>
-          <button className="px-3 py-1 text-xs font-medium text-slate-500 hover:bg-slate-100 rounded-lg">Month</button>
+          <button className="px-3 py-1 text-xs font-medium bg-purple-600 text-white rounded-lg">Year</button>
+          <button className="px-3 py-1 text-xs font-medium text-violet-500 hover:bg-purple-50 rounded-lg">Quarter</button>
+          <button className="px-3 py-1 text-xs font-medium text-violet-500 hover:bg-purple-50 rounded-lg">Month</button>
         </div>
       </div>
       <ResponsiveContainer width="100%" height={280}>
         <AreaChart data={data} margin={{ top: 5, right: 10, left: 0, bottom: 0 }}>
           <defs>
             <linearGradient id="colorRevenue" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="#3b82f6" stopOpacity={0.3} />
-              <stop offset="95%" stopColor="#3b82f6" stopOpacity={0} />
+              <stop offset="5%" stopColor="#a855f7" stopOpacity={0.3} />
+              <stop offset="95%" stopColor="#a855f7" stopOpacity={0} />
             </linearGradient>
             <linearGradient id="colorExpenses" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="#a78bfa" stopOpacity={0.3} />
-              <stop offset="95%" stopColor="#a78bfa" stopOpacity={0} />
+              <stop offset="5%" stopColor="#ec4899" stopOpacity={0.3} />
+              <stop offset="95%" stopColor="#ec4899" stopOpacity={0} />
             </linearGradient>
           </defs>
-          <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" />
+          <CartesianGrid strokeDasharray="3 3" stroke="#f3e8ff" />
           <XAxis
             dataKey="month"
-            tick={{ fontSize: 12, fill: '#94a3b8' }}
+            tick={{ fontSize: 12, fill: '#c084fc' }}
             axisLine={false}
             tickLine={false}
           />
           <YAxis
             tickFormatter={formatCurrency}
-            tick={{ fontSize: 12, fill: '#94a3b8' }}
+            tick={{ fontSize: 12, fill: '#c084fc' }}
             axisLine={false}
             tickLine={false}
           />
           <Tooltip
             formatter={(value: number) => [`$${value.toLocaleString()}`, '']}
             contentStyle={{
-              backgroundColor: '#1e293b',
+              backgroundColor: '#3b0764',
               border: 'none',
               borderRadius: '8px',
-              color: '#f8fafc',
+              color: '#faf5ff',
               fontSize: '13px',
             }}
-            labelStyle={{ color: '#94a3b8' }}
+            labelStyle={{ color: '#c084fc' }}
           />
           <Legend
             iconType="circle"
@@ -90,7 +90,7 @@ export default function RevenueChart() {
             type="monotone"
             dataKey="revenue"
             name="Revenue"
-            stroke="#3b82f6"
+            stroke="#a855f7"
             strokeWidth={2.5}
             fill="url(#colorRevenue)"
           />
@@ -98,7 +98,7 @@ export default function RevenueChart() {
             type="monotone"
             dataKey="expenses"
             name="Expenses"
-            stroke="#a78bfa"
+            stroke="#ec4899"
             strokeWidth={2.5}
             fill="url(#colorExpenses)"
           />
